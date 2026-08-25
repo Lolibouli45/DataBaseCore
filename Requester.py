@@ -17,12 +17,12 @@ class Requester:
                 "message": "DataBase Core is running"
             }
 
-        @self.app.get("/employee/{employee_id}")
+        @self.app.get("/employee/id/{employee_id}")
         def get_employee_by_id(employee_id: int):
             payload = self.db.get_employee_by_id(employee_id)
             return {"message": payload}
 
-        @self.app.get("/employee/{employee_name}")
+        @self.app.get("/employee/name/{employee_name}")
         def get_employee_by_name(employee_name: str):
             payload = self.db.get_employee_by_name(employee_name)
             return {"message" : payload}

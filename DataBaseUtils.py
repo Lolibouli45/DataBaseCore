@@ -23,7 +23,7 @@ class DataBase:
         response = (self.supabase.table("employee").select("*").execute())
         return response.data
 
-    def get_employee_by_id(self, id: str):
+    def get_employee_by_id(self, id: int):
         response = (self.supabase.table("employee").select("*").eq("id", id).execute())
         return response.data
 
@@ -36,7 +36,7 @@ class DataBase:
         response = (self.supabase.table("project").select("*").execute())
         return response.data
 
-    def get_project_by_id(self, id: str):
+    def get_project_by_id(self, id: int):
         response = (self.supabase.table("project").select("*").eq("id", id).execute())
         return response.data
 
@@ -44,7 +44,7 @@ class DataBase:
         response = (self.supabase.table("project").select("*").eq("name", name).execute())
         return response.data
 
-    def get_project_by_employee_id(self, employee_id: str):
+    def get_project_by_employee_id(self, employee_id: int):
         response = (self.supabase.table("project").select("*").eq("employee_id", employee_id).execute())
         return response.data
 

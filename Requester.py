@@ -31,3 +31,8 @@ class Requester:
         def get_project_by_employee_id(employee_id: int):
             payload = self.db.get_project_by_employee_id(employee_id)
             return {"message": payload}
+
+        @self.app.post("/shift")
+        def add_shift(shift: ShiftCreate):
+            payload = self.db.add_shift(shift.timestamp, shift.employee_name, shift.shift_info, shift.shift_project)
+            retunr {"message": payload}

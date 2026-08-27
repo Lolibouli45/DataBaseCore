@@ -46,6 +46,7 @@ class DataBase:
 
     def get_project_by_employee_id(self, employee_id: int):
         response = (self.supabase.table("project").select("*").eq("employee_id", employee_id).execute())
+        print(response.status_code, response.text)
         return response.data
 
     # SET METHOD

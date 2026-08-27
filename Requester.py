@@ -27,7 +27,7 @@ class Requester:
             payload = self.db.get_employee_by_name(employee_name)
             return {"message" : payload}
 
-        @self.app.get("/project/employee_id/{employee_id}")
+        @self.app.get("/project/employee/id/{employee_id}")
         def get_project_by_employee_id(employee_id: int):
             payload = self.db.get_project_by_employee_id(employee_id)
             return {"message": payload}

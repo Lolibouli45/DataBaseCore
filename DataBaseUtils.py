@@ -78,7 +78,7 @@ class DataBase:
     #     return response.data
 
     def add_shift(self, timestamp, employee_name, shift_info, shift_project):
-        response = (self.supabase.table("shift").insert({"timestamp": timestamp, "shift_info": shift_info, "shift_project": shift_project, "employee_name": employee_name}).execute())
+        response = (self.supabase.table("shift_log").insert({"timestamp": timestamp, "shift_info": shift_info, "shift_project": shift_project, "employee_name": employee_name}).execute())
         return response.data
 
     # # DELETE METHOD

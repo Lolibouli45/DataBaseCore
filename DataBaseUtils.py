@@ -19,9 +19,9 @@ class DataBase:
 
     # GET METHOD
     # TABLE employee
-    def get_employees(self):
-        response = (self.supabase.table("employee").select("*").execute())
-        return response.data
+    # def get_employees(self):
+    #     response = (self.supabase.table("employee").select("*").execute())
+    #     return response.data
 
     def get_employee_by_id(self, id: int):
         response = (self.supabase.table("employee").select("*").eq("id", id).execute())
@@ -32,17 +32,17 @@ class DataBase:
         return response.data
 
     # TABLE project
-    def get_projects(self):
-        response = (self.supabase.table("project").select("*").execute())
-        return response.data
+    # def get_projects(self):
+    #     response = (self.supabase.table("project").select("*").execute())
+    #     return response.data
 
-    def get_project_by_id(self, id: int):
-        response = (self.supabase.table("project").select("*").eq("id", id).execute())
-        return response.data
+    # def get_project_by_id(self, id: int):
+    #     response = (self.supabase.table("project").select("*").eq("id", id).execute())
+    #     return response.data
 
-    def get_project_by_name(self, name: str):
-        response = (self.supabase.table("project").select("*").eq("name", name).execute())
-        return response.data
+    # def get_project_by_name(self, name: str):
+    #     response = (self.supabase.table("project").select("*").eq("name", name).execute())
+    #     return response.data
 
     def get_project_by_employee_id(self, employee_id: int):
         response = (self.supabase.table("project").select("*").eq("employee_id", employee_id).execute())
@@ -50,44 +50,44 @@ class DataBase:
 
     # SET METHOD
     # TABLE employee
-    def set_employee_name(self, name: str, id: int):
-        response = (self.supabase.table("employee").update("name", name).eq("id", id).execute())
-        return response.data
+    # def set_employee_name(self, name: str, id: int):
+    #     response = (self.supabase.table("employee").update("name", name).eq("id", id).execute())
+    #     return response.data
 
-    def set_employee_password(self, password: str, id: int):
-        response = (self.supabase.table("employee").update("password", password).eq("id", id).execute())
-        return response.data
+    # def set_employee_password(self, password: str, id: int):
+    #     response = (self.supabase.table("employee").update("password", password).eq("id", id).execute())
+    #     return response.data
 
-    # TABLE project
-    def set_project_name(self, name: str, id: int):
-        response = (self.supabase.table("project").update("name", name).eq("id", id).execute())
-        return response.data
+    # # TABLE project
+    # def set_project_name(self, name: str, id: int):
+    #     response = (self.supabase.table("project").update("name", name).eq("id", id).execute())
+    #     return response.data
 
-    def set_project_employee_id(self, employee_id: int, id: int):
-        response = (self.supabase.table("project").update("employee_id", employee_id).eq("id", id).execute())
-        return response.data
+    # def set_project_employee_id(self, employee_id: int, id: int):
+    #     response = (self.supabase.table("project").update("employee_id", employee_id).eq("id", id).execute())
+    #     return response.data
 
     # ADD METHOD
     # TABLE employee
-    def add_employee(self, name: str, password: str):
-        response = (self.supabase.table("employee").insert({"name": name, "password": password}).execute())
-        return response.data
+    # def add_employee(self, name: str, password: str):
+    #     response = (self.supabase.table("employee").insert({"name": name, "password": password}).execute())
+    #     return response.data
 
-    def add_project(self, name: str, employee_id: int):
-        response = (self.supabase.table("project").insert({"name": name, "employee_id": employee_id}).execute())
-        return response.data
+    # def add_project(self, name: str, employee_id: int):
+    #     response = (self.supabase.table("project").insert({"name": name, "employee_id": employee_id}).execute())
+    #     return response.data
 
     def add_shift(self, timestamp, employee_name, shift_info, shift_project):
         response = (self.supabase.table("shift").insert({"timestamp": timestamp, "shift_info": shift_info, "shift_project": shift_project, "employee_name": employee_name}).execute())
         return response.data
 
-    # DELETE METHOD
-    # TABLE employee
-    def delete_employee(self, id: int):
-        response = (self.supabase.table("employee").delete().eq("id", id).execute())
-        return response.data
+    # # DELETE METHOD
+    # # TABLE employee
+    # def delete_employee(self, id: int):
+    #     response = (self.supabase.table("employee").delete().eq("id", id).execute())
+    #     return response.data
 
-    # TABLE project
-    def delete_project(self, id: int):
-        response = (self.supabase.table("project").delete().eq("id", id).execute())
+    # # TABLE project
+    # def delete_project(self, id: int):
+    #     response = (self.supabase.table("project").delete().eq("id", id).execute())
         return response.data

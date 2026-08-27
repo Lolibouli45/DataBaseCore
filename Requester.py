@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from DataBaseUtils import DataBase
+from ShiftDataModel import ShiftCreate
 
 class Requester:
     def __init__(self):
